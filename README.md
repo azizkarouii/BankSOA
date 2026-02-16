@@ -56,3 +56,31 @@ http://localhost:8080/ws/bank.wsdl
   </soapenv:Body>
 </soapenv:Envelope>
 ```
+
+### Withdraw
+```xml
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:ban="http://example.com/bank">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <ban:WithdrawRequest>
+      <ban:accountId>A100</ban:accountId>
+      <ban:amount>50.00</ban:amount>
+    </ban:WithdrawRequest>
+  </soapenv:Body>
+</soapenv:Envelope>
+```
+
+### Fault (Insufficient funds)
+```xml
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:ban="http://example.com/bank">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <ban:WithdrawRequest>
+      <ban:accountId>A100</ban:accountId>
+      <ban:amount>1000.00</ban:amount>
+    </ban:WithdrawRequest>
+  </soapenv:Body>
+</soapenv:Envelope>
+```
